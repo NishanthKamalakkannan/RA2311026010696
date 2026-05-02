@@ -103,11 +103,4 @@ Log("frontend", "error", "api", "Failed to fetch notifications")
 Log("frontend", "info", "component", "Notification marked as viewed")
 ```
 
-## Screenshots
-
-### All Notifications
-![All Notifications Desktop](screenshots/all_notifications_desktop.png)
-
-### Priority Inbox
-![Priority Inbox Desktop](screenshots/priority_desktop.png)
 
