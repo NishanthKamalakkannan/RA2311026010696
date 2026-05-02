@@ -1,4 +1,4 @@
-const BASE_URL = "/evaluation-service";
+const BASE_URL = "http://20.207.122.201/evaluation-service";
 
 const AUTH_PAYLOAD = {
   email: "nk8644@srmist.edu.in",
@@ -11,7 +11,7 @@ const AUTH_PAYLOAD = {
 
 let authToken = null;
 
-export async function refreshToken() {
+async function refreshToken() {
   try {
     const res = await fetch(`${BASE_URL}/auth`, {
       method: "POST",
@@ -25,11 +25,7 @@ export async function refreshToken() {
   }
 }
 
-export function getToken() {
-  return authToken;
-}
-
-export async function Log(stack, level, pkg, message) {
+async function Log(stack, level, pkg, message) {
   const validStacks = ["frontend", "backend"];
   const validLevels = ["debug", "info", "warn", "error", "fatal"];
   const validFrontendPkgs = ["api", "component", "hook", "page", "state", "style", "auth", "config", "middleware", "utils"];
@@ -60,3 +56,5 @@ export async function Log(stack, level, pkg, message) {
     // silent fail
   }
 }
+
+module.exports = { Log, refreshToken, getToken: () => authToken };
